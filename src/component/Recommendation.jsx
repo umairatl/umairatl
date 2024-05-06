@@ -6,6 +6,9 @@ import { feedback } from "../constant/feedback";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { ContentSize } from "./shared/ContentSize";
+import Divider from "@mui/material/Divider";
+import QR from "../asset/quoteRight.png";
+import QL from "../asset/quoteLeft.png";
 
 const useStyles = makeStyles()((theme) => ({
   wrapBox: {
@@ -37,13 +40,16 @@ const useStyles = makeStyles()((theme) => ({
     cursor: "pointer",
   },
   wrapCarousel: {
-    width: "800px",
+    paddingRight: "3.5rem",
+    // width: "70%",
+    // width: "800px",
+    // marginRight: "5rem",
     [theme.breakpoints.down("md")]: {
       width: "100%",
     },
   },
   wrapItemFeedback: {
-    height: "300px",
+    // height: "250px",
     [theme.breakpoints.down("md")]: {
       height: "450px",
     },
@@ -98,76 +104,104 @@ const Recommendations = () => {
   return (
     <Box sx={{ width: "100%", margin: "2rem 0rem" }}>
       <ContentSize>
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignContent="center"
-          width="100%"
-        >
-          <Typography variant="h5" marginBottom="2rem" textAlign="center">
-            Feedbacks & Recommendations
-          </Typography>
-          <Grid item className={classes.wrapCarousel}>
-            <Carousel
-              autoPlay
-              infiniteLoop
-              interval="5000"
-              transitionTime="5000"
-              showThumbs={false}
-              emulateTouch
-              preventMovementUntilSwipeScrollTolerance
-              renderArrowPrev={(clickHandler, hasPrev) => (
-                <HandleArrowPrev
-                  clickHandler={clickHandler}
-                  hasPrev={hasPrev}
-                />
-              )}
-              renderArrowNext={(clickHandler, hasNext) => (
-                <HandleArrowNext
-                  clickHandler={clickHandler}
-                  hasNext={hasNext}
-                />
-              )}
+        <Grid container direction="row" alignItems="center">
+          <Grid item xs={3}>
+            <Typography variant="h6">Feedbacks & Recommendations</Typography>
+          </Grid>
+
+          <Grid item xs={9}>
+            <Grid
+              container
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
             >
-              {feedback.map((res, index) => (
-                <Card
-                  key={index}
-                  sx={{ padding: "2rem 3rem", marginBottom: "1rem" }}
+              <Grid item xs={11}>
+                <Divider sx={{ border: "1px solid black", width: "98%" }} />
+              </Grid>
+              <Grid item xs={1}>
+                <img src={QR} />
+              </Grid>
+            </Grid>
+
+            <Grid
+              container
+              className={classes.wrapCarousel}
+              justifyContent="flex-end"
+            >
+              <Grid item width="800px">
+                <Carousel
+                  autoPlay
+                  infiniteLoop
+                  interval="5000"
+                  showIndicators={false}
+                  transitionTime="5000"
+                  showThumbs={false}
+                  emulateTouch
+                  preventMovementUntilSwipeScrollTolerance
+                  renderArrowPrev={(clickHandler, hasPrev) => (
+                    <HandleArrowPrev
+                      clickHandler={clickHandler}
+                      hasPrev={hasPrev}
+                    />
+                  )}
+                  renderArrowNext={(clickHandler, hasNext) => (
+                    <HandleArrowNext
+                      clickHandler={clickHandler}
+                      hasNext={hasNext}
+                    />
+                  )}
                 >
-                  <Grid container rowGap={3}>
-                    <Grid item xs={12}>
-                      <Grid
-                        container
-                        direction="row"
-                        alignItems="center"
-                        columnGap={2}
-                      >
-                        <Grid item height="100%">
-                          <img
-                            src={res.img}
-                            width={60}
-                            height={60}
-                            className={classes.img}
-                          />
-                        </Grid>
-                        <Grid item>
-                          <Stack direction="column" textAlign="left">
-                            <Typography>{res.name}</Typography>
-                            <Typography>{res.position}</Typography>
-                          </Stack>
+                  {feedback.map((res, index) => (
+                    <Grid container rowGap={3}>
+                      <Grid item xs={12}>
+                        <Grid
+                          container
+                          direction="row"
+                          alignItems="center"
+                          columnGap={2}
+                        >
+                          <Grid item height="100%">
+                            <img
+                              src={res.img}
+                              width={60}
+                              height={60}
+                              className={classes.img}
+                            />
+                          </Grid>
+                          <Grid item>
+                            <Stack direction="column" textAlign="left">
+                              <Typography>{res.name}</Typography>
+                              <Typography>{res.position}</Typography>
+                            </Stack>
+                          </Grid>
                         </Grid>
                       </Grid>
+                      <Grid item xs={12} className={classes.wrapItemFeedback}>
+                        <Typography variant="subtitle1" textAlign="left">
+                          "{res.feedback}"
+                        </Typography>
+                      </Grid>
                     </Grid>
-                    <Grid item xs={12} className={classes.wrapItemFeedback}>
-                      <Typography variant="subtitle1" textAlign="left">
-                        "{res.feedback}"
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </Card>
-              ))}
-            </Carousel>
+                  ))}
+                </Carousel>
+              </Grid>
+            </Grid>
+
+            <Grid
+              container
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              marginTop={0}
+            >
+              <Grid item xs={1}>
+                <img src={QL} />
+              </Grid>
+              <Grid item xs={11}>
+                <Divider sx={{ border: "1px solid black", width: "98%" }} />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </ContentSize>

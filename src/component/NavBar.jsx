@@ -105,7 +105,7 @@ const NavBar = ({ toggleDarkMode, toggleDarkTheme }) => {
         <Grid item>
           <Stack direction="row" alignItems="center" columnGap={1}>
             <img src={img} width={40} height={40} />
-            <Typography variant="subtitle1">{`<umairatul />`}</Typography>
+            {/* <Typography variant="subtitle1">{`<umairatul />`}</Typography> */}
           </Stack>
         </Grid>
         <Grid item>

@@ -2,16 +2,14 @@ import { Box, Card, Grid, Link, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { makeStyles } from "tss-react/mui";
-import Amiibo from "../asset/amiibo.png";
-import CryptownImg1 from "../asset/cryptownImg1.png";
-import KingKongFood from "../asset/kingkongfood.png";
-import Yummly from "../asset/mobDev.png";
-import MoneyMatch from "../asset/moneymatchco.png";
+
 import { ContentSize } from "./shared/ContentSize";
+import { PROJECTS_LIST } from "../constant/projects";
 
 const useStyles = makeStyles()((theme) => ({
   wrapBox: {
     marginTop: 40,
+    marginBottom: 40,
     width: "100%",
     [theme.breakpoints.down("md")]: {
       width: "100%",
@@ -20,6 +18,7 @@ const useStyles = makeStyles()((theme) => ({
   img: {
     width: "360px",
     height: "180px",
+    filter: "brightness(0.7)",
     [theme.breakpoints.down("md")]: {
       width: "100%",
       height: "100%",
@@ -27,55 +26,22 @@ const useStyles = makeStyles()((theme) => ({
   },
   wrapGridItem: {
     minHeight: 400,
+    "&:hover .MuiCard-root": {
+      backgroundColor: "#f0f0f0",
+    },
+    "&:hover .MuiTypography-root .MuiTypography-inherit": {
+      color: "#A10142",
+      textDecoration: "underline",
+    },
   },
-  desc: {},
+  link: {
+    textDecoration: "none",
+  },
 }));
 
 const Projects = () => {
   const { classes } = useStyles();
   const theme = useTheme();
-  const project = [
-    {
-      img: MoneyMatch,
-      website: "MoneyMatch.co",
-      subtitle:
-        "Contributed to the development of the web and mobile-optimized pages for moneymatch.co using Next.js and Strapi CMS. Played a key role in crafting the solution from its inception, ensuring thorough attention to SEO optimizations.",
-      repo: "https://moneymatch.co/",
-      period: "August 2022",
-    },
-    {
-      img: CryptownImg1,
-      website: "Cryptown Web Application",
-      subtitle:
-        "Spearheaded front-end development for an innovative cryptocurrency education platform. Orchestrated seamless integration with backend APIs for optimal user experience. We won second place.",
-      repo: "https://github.com/umairatl/cryptown-web",
-      period: "Nov 2022 – Dec 2022",
-    },
-    {
-      img: Amiibo,
-      website: "Amiibo Series Web Application",
-      subtitle:
-        "Led the creation of an informative website showcasing amiibo characters, integrating user-friendly search capabilities",
-      repo: "https://team3b-fe-hackathon1-1ihi05joa-akmal21hakim.vercel.app/",
-      period: "July 2022",
-    },
-    {
-      img: Yummly,
-      website: "Food Recipe App (Mobile Hackathon)",
-      subtitle:
-        "Led both mobile and front-end development for a user-friendly recipe app, seamlessly integrated with Yummly Rapid API for enhanced recipe exploration.",
-      repo: "https://github.com/umairatl/MobDevProject_GroupE",
-      period: "August 2022",
-    },
-    {
-      img: KingKongFood,
-      website: "KingKongFood Web App (FYP)",
-      subtitle:
-        "Led both mobile and front-end development for a user-friendly recipe app, seamlessly integrated with Yummly Rapid API for enhanced recipe exploration.",
-      repo: "https://drive.google.com/file/d/1Rxe2N-oE_xOPViz8wvLT6Zi776BxS7rn/view?usp=sharing",
-      period: "August 2022",
-    },
-  ];
 
   return (
     <Box className={classes.wrapBox}>
@@ -83,27 +49,49 @@ const Projects = () => {
         <Typography variant="h5" textAlign="center" padding={5}>
           Projects & Hackathons
         </Typography>
-        <Grid container justifyContent="space-evenly" rowGap={5}>
-          {project.map((res, index) => (
+        <Grid container rowGap={5} columnGap={5}>
+          {PROJECTS_LIST.map((res, index) => (
             <Grid
               item
               xs={12}
               sm={5.5}
-              lg={3.5}
+              lg={3.7}
               key={index}
               className={classes.wrapGridItem}
             >
-              <Card>
-                <img src={res?.img} className={classes.img} />
-                <Stack direction="column" padding={2} height="200px">
-                  <Link href={res.repo} target="_blank">
-                    <Typography variant="subtitle1">{res.website}</Typography>
-                  </Link>
-                  <Typography variant="subtitle2" className={classes.desc}>
-                    {res.subtitle}
-                  </Typography>
-                </Stack>
-              </Card>
+              <Link href={res.repo} target="_blank" className={classes.link}>
+                <Card
+                  sx={{
+                    borderRadius: "0.5rem",
+                    boxShadow: "0px 15px 18px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
+                  <img src={res?.img} className={classes.img} />
+                  <Stack direction="column" padding={2} height="200px">
+                    <Typography variant="subtitle2" fontWeight="bold">
+                      {res.website} | {res.period}
+                    </Typography>
+                    <Stack direction="row" columnGap={1}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill="#A10142"
+                          d="m7.775 3.275l1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0a.75.75 0 0 1 .018-1.042a.75.75 0 0 1 1.042-.018a2 2 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.75.75 0 0 1-1.042-.018a.75.75 0 0 1-.018-1.042m-4.69 9.64a2 2 0 0 0 2.83 0l1.25-1.25a.75.75 0 0 1 1.042.018a.75.75 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0a.75.75 0 0 1-.018 1.042a.75.75 0 0 1-1.042.018a2 2 0 0 0-2.83 0l-2.5 2.5a2 2 0 0 0 0 2.83"
+                        />
+                      </svg>
+
+                      <Typography variant="inherit" fontSize="0.9rem">
+                        {res.linkType}
+                      </Typography>
+                    </Stack>
+                    <Typography variant="subtitle2">{res.subtitle}</Typography>
+                  </Stack>
+                </Card>
+              </Link>
             </Grid>
           ))}
         </Grid>

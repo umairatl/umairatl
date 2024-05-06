@@ -35,44 +35,42 @@ const Education = () => {
 
   return (
     <ContentSize>
-      <Box className={classes.wrapBox}>
-        <Card className={classes.wrapCard}>
-          <Typography varaint="h5" textAlign="start">
-            Education
-          </Typography>
-          {work.map((res, index) => (
-            <Grid
-              container
-              justifyContent="space-between"
-              key={index}
-              margin="10px 0px"
+      <Card sx={{ padding: 5, borderRadius: 5 }}>
+        <Typography varaint="h5" textAlign="start" fontWeight="bold">
+          Education
+        </Typography>
+        {work.map((res, index) => (
+          <Grid
+            container
+            justifyContent="space-between"
+            key={index}
+            margin="10px 0px"
+          >
+            <Stack
+              direction={{ md: "row", sm: "column" }}
+              alignItems="center"
+              columnGap={2}
             >
-              <Stack
-                direction={{ md: "row", sm: "column" }}
-                alignItems="center"
-                columnGap={2}
-              >
-                <img
-                  src={res.img}
-                  width={40}
-                  height={40}
-                  className={`${classes.img} ${
-                    theme.palette.mode === "dark"
-                      ? "dark:border-zinc-700/50 dark:ring-zinc-900/5"
-                      : ""
-                  }`}
-                />
-                <Stack direction="column">
-                  <Typography variant="subtitle1">{res.school}</Typography>
-                  <Typography variant="subtitle2">{res.major}</Typography>
-                  <Typography variant="subtitle2">{res.award}</Typography>
-                </Stack>
+              <img
+                src={res.img}
+                width={40}
+                height={40}
+                className={`${classes.img} ${
+                  theme.palette.mode === "dark"
+                    ? "dark:border-zinc-700/50 dark:ring-zinc-900/5"
+                    : ""
+                }`}
+              />
+              <Stack direction="column">
+                <Typography variant="subtitle1">{res.school}</Typography>
+                <Typography variant="subtitle2">{res.major}</Typography>
+                <Typography variant="subtitle2">{res.award}</Typography>
               </Stack>
-              <Typography variant="subtitle1">{res.period}</Typography>
-            </Grid>
-          ))}
-        </Card>
-      </Box>
+            </Stack>
+            <Typography variant="subtitle1">{res.period}</Typography>
+          </Grid>
+        ))}
+      </Card>
     </ContentSize>
   );
 };
