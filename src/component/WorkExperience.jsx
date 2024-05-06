@@ -14,20 +14,23 @@ const useStyles = makeStyles()((theme) => ({
     borderRadius: "50%",
   },
   btn: {
+    background: "#A10142 20%",
+    color: "white",
+    "&:hover": { background: "#697E50" },
     width: "20%",
     padding: "0.5rem 0",
-    background: "#423944",
-    color: "white",
-    borderRadius: "1rem",
-    [theme.breakpoints.down('md')]:{
-      width: '100%'
-    }
+    // background: "#423944",
+    // color: "white",
+    // borderRadius: "1rem",
+    // [theme.breakpoints.down("md")]: {
+    //   width: "100%",
+    // },
   },
-  period:{
-    [theme.breakpoints.down('md')]:{
-      display: 'none'
-    }
-  }
+  period: {
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
 }));
 
 const WorkExperience = () => {
@@ -56,42 +59,46 @@ const WorkExperience = () => {
 
   return (
     <ContentSize>
-    <Box className={classes.wrapBox}>
-      <Card sx={{ padding: 5, borderRadius: 5 }}>
-        <Typography varaint="h5" textAlign="start">
-          Work Experience
-        </Typography>
-        {work.map((res, index) => (
-          <Grid
-            container
-            justifyContent="space-between"
-            key={index}
-            margin="10px 0px"
-          >
-            <Stack direction="row" alignItems="center" columnGap={2}>
-              <img
-                src={res.img}
-                width={40}
-                height={40}
-                className={`${classes.img} ${
-                  theme.palette.mode === "dark"
-                    ? "dark:border-zinc-700/50 dark:ring-zinc-900/5"
-                    : ""
-                }`}
-              />
-              <Stack direction="column">
-                <Typography variant="subtitle1">{res.company}</Typography>
-                <Typography variant="subtitle2">{res.title}</Typography>
+      <Box className={classes.wrapBox}>
+        <Card sx={{ padding: 5, borderRadius: 5 }}>
+          <Typography varaint="h5" textAlign="start" fontWeight="bold">
+            Work Experience
+          </Typography>
+          {work.map((res, index) => (
+            <Grid
+              container
+              justifyContent="space-between"
+              key={index}
+              margin="10px 0px"
+            >
+              <Stack direction="row" alignItems="center" columnGap={2}>
+                <img
+                  src={res.img}
+                  width={40}
+                  height={40}
+                  className={`${classes.img} ${
+                    theme.palette.mode === "dark"
+                      ? "dark:border-zinc-700/50 dark:ring-zinc-900/5"
+                      : ""
+                  }`}
+                />
+                <Stack direction="column">
+                  <Typography variant="subtitle1">{res.company}</Typography>
+                  <Typography variant="subtitle2">{res.title}</Typography>
+                </Stack>
               </Stack>
-            </Stack>
-            <Typography variant="subtitle1" className={classes.period}>{res.period}</Typography>
-          </Grid>
-        ))}
-        <Stack direction="row" justifyContent='center' marginTop={5}>
-        <Button variant="contained" className={classes.btn}>Download CV</Button>
-        </Stack>
-      </Card>
-    </Box>
+              <Typography variant="subtitle1" className={classes.period}>
+                {res.period}
+              </Typography>
+            </Grid>
+          ))}
+          {/* <Stack direction="row" justifyContent="center" marginTop={5}>
+            <Button variant="contained" className={classes.btn}>
+              Download CV
+            </Button>
+          </Stack> */}
+        </Card>
+      </Box>
     </ContentSize>
   );
 };

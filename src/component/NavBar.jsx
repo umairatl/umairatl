@@ -1,10 +1,9 @@
-import { Box, Grid, Link, Stack, Typography } from "@mui/material";
-import img from "../asset/header.png";
-import FormGroup from "@mui/material/FormGroup";
+import { Grid, Link, Stack, Typography } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
-import Switch, { SwitchProps } from "@mui/material/Switch";
 import { makeStyles } from "tss-react/mui";
+import img from "../asset/header.png";
 import { ContentSize } from "./shared/ContentSize";
 
 const useStyles = makeStyles()((theme) => ({
@@ -13,6 +12,15 @@ const useStyles = makeStyles()((theme) => ({
     marginTop: 50,
     [theme.breakpoints.down("lg")]: {
       width: "85%",
+    },
+  },
+  link: {
+    textDecoration: "none",
+    color: "black",
+    ":hover": {
+      textDecoration: "underline",
+      color: "#A10142",
+      cursor: "pointer",
     },
   },
 }));
@@ -66,30 +74,63 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const NavBar = ({ toggleDarkMode, toggleDarkTheme }) => {
   const { classes } = useStyles();
+  const data = [
+    { title: "CV", link: "CV" },
+    { title: "Projects", link: "Projects" },
+    { title: "Experience", link: "Experience" },
+    { title: "Feedback", link: "Feedback" },
+  ];
+
+  const onClickLink = (link) => {
+    const element = document.querySelector(link);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+    } else {
+      console.error("Element not found:", link);
+    }
+  };
 
   return (
     <ContentSize>
-      <Grid container direction="row" justifyContent="space-between">
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-between"
+        className="navbar"
+      >
         <Grid item>
           <Stack direction="row" alignItems="center" columnGap={1}>
-            <img src={img} width={30} height={30} />
-            {/* <Typography variant="subtitle1">{`<umaira />`}</Typography> */}
+            <img src={img} width={40} height={40} />
+            <Typography variant="subtitle1">{`<umairatul />`}</Typography>
           </Stack>
         </Grid>
         <Grid item>
-          <FormControlLabel
-            control={
-              <MaterialUISwitch
-                sx={{ m: 1 }}
-                checked={toggleDarkMode}
-                onChange={toggleDarkTheme}
-              />
-            }
-          />
-          <Link href="">
-            <Typography>CV</Typography>
-          </Link>
-          Resume
+          <Stack direction="row" alignItems="center" columnGap={2}>
+            {data.map((res, index) => (
+              <Link
+                key={index}
+                onClick={onClickLink(`${res.link}`)}
+                className={classes.link}
+              >
+                <Typography variant="h7" fontWeight="bold">
+                  {res.title}
+                </Typography>
+              </Link>
+            ))}
+            <FormControlLabel
+              control={
+                <MaterialUISwitch
+                  sx={{ m: 1 }}
+                  checked={toggleDarkMode}
+                  onChange={toggleDarkTheme}
+                />
+              }
+            />
+          </Stack>
         </Grid>
       </Grid>
     </ContentSize>

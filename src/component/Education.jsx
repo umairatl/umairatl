@@ -12,10 +12,10 @@ const useStyles = makeStyles()((theme) => ({
     borderRadius: "50%",
   },
   wrapCard: {
-    padding: '2rem',
+    padding: "2rem",
     borderRadius: 5,
     [theme.breakpoints.down("md")]: {
-      padding: '1rem',
+      padding: "1rem",
     },
   },
 }));
@@ -28,51 +28,51 @@ const Education = () => {
       img: LJMU,
       school: "Liverpool John Moores University, (3+0)",
       major: "e-Business Technology & Management",
-      award: "Bachelor of Science with Honors Class 1",
+      award: "Bachelor of Science with Honors Class 1 (76%)",
       period: "2018-2021",
     },
   ];
 
   return (
     <ContentSize>
-    <Box className={classes.wrapBox}>
-      <Card className={classes.wrapCard}>
-        <Typography varaint="h5" textAlign="start">
-          Education
-        </Typography>
-        {work.map((res, index) => (
-          <Grid
-            container
-            justifyContent="space-between"
-            key={index}
-            margin="10px 0px"
-          >
-            <Stack
-              direction={{ md: "row", sm: "column" }}
-              alignItems="center"
-              columnGap={2}
+      <Box className={classes.wrapBox}>
+        <Card className={classes.wrapCard}>
+          <Typography varaint="h5" textAlign="start">
+            Education
+          </Typography>
+          {work.map((res, index) => (
+            <Grid
+              container
+              justifyContent="space-between"
+              key={index}
+              margin="10px 0px"
             >
-              <img
-                src={res.img}
-                width={40}
-                height={40}
-                className={`${classes.img} ${
-                  theme.palette.mode === "dark"
-                    ? "dark:border-zinc-700/50 dark:ring-zinc-900/5"
-                    : ""
-                }`}
-              />
-              <Stack direction="column">
-                <Typography variant="subtitle1">{res.school}</Typography>
-                <Typography variant="subtitle2">{res.major}</Typography>
-                <Typography variant="subtitle2">{res.award}</Typography>
+              <Stack
+                direction={{ md: "row", sm: "column" }}
+                alignItems="center"
+                columnGap={2}
+              >
+                <img
+                  src={res.img}
+                  width={40}
+                  height={40}
+                  className={`${classes.img} ${
+                    theme.palette.mode === "dark"
+                      ? "dark:border-zinc-700/50 dark:ring-zinc-900/5"
+                      : ""
+                  }`}
+                />
+                <Stack direction="column">
+                  <Typography variant="subtitle1">{res.school}</Typography>
+                  <Typography variant="subtitle2">{res.major}</Typography>
+                  <Typography variant="subtitle2">{res.award}</Typography>
+                </Stack>
               </Stack>
-            </Stack>
-            <Typography variant="subtitle1">{res.period}</Typography>
-          </Grid>
-        ))}
-      </Card>
-    </Box>
+              <Typography variant="subtitle1">{res.period}</Typography>
+            </Grid>
+          ))}
+        </Card>
+      </Box>
     </ContentSize>
   );
 };

@@ -1,6 +1,6 @@
 import { Box, Card, Grid, Link, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { makeStyles } from "tss-react/mui";
 import Amiibo from "../asset/amiibo.png";
 import CryptownImg1 from "../asset/cryptownImg1.png";
@@ -12,8 +12,7 @@ import { ContentSize } from "./shared/ContentSize";
 const useStyles = makeStyles()((theme) => ({
   wrapBox: {
     marginTop: 40,
-    width: '100%',
-    background: "#f0f0f0",
+    width: "100%",
     [theme.breakpoints.down("md")]: {
       width: "100%",
     },

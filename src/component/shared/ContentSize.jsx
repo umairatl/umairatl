@@ -5,7 +5,8 @@ import { makeStyles } from "tss-react/mui";
 const useStyles = makeStyles()((theme) => ({
   wrapGrid: {
     width: 1200,
-    marginTop: 50,
+    background: "white",
+    marginTop: 40,
     [theme.breakpoints.down("lg")]: {
       width: "85%",
     },

@@ -5,9 +5,9 @@ import { ContentSize } from "./shared/ContentSize";
 
 const useStyles = makeStyles()((theme) => ({
   wrapFooter: {
-    margin: '10px 0',
+    margin: "10px 0",
     [theme.breakpoints.down("md")]: {
-      textAlign: 'center',
+      textAlign: "center",
     },
   },
   img: {
@@ -21,20 +21,25 @@ const Footer = () => {
 
   return (
     <ContentSize>
-    <Grid container direction={{md: 'row', sm: "column"}} justifyContent="space-between" className={classes.wrapFooter}>
-      <Grid item>
-        <Typography>
-          © 2024 Umairatul. All rights reserved. For interview purpose
-        </Typography>
+      <Grid
+        container
+        direction={{ md: "row", sm: "column" }}
+        justifyContent="space-between"
+        className={classes.wrapFooter}
+      >
+        <Grid item>
+          <Typography>
+            © 2024 Umairatul. All rights reserved. For interview purpose
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Stack direction="row" columnGap={2}>
+            <Typography>LinkedIn </Typography>
+            <Typography>Github </Typography>
+            <Typography>LinkedIn </Typography>
+          </Stack>
+        </Grid>
       </Grid>
-      <Grid item>
-        <Stack direction="row" columnGap={2}>
-          <Typography>LinkedIn </Typography>
-          <Typography>Github </Typography>
-          <Typography>LinkedIn </Typography>
-        </Stack>
-      </Grid>
-    </Grid>
     </ContentSize>
   );
 };

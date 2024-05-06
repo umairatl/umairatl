@@ -1,25 +1,20 @@
-import { Grid, Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import React, { useState } from "react";
 import { makeStyles } from "tss-react/mui";
-import Header from "./component/Header";
-import NavBar from "./component/NavBar";
-import WorkExperience from "./component/WorkExperience";
-import Projects from "./component/Projects";
+import Pic from "./asset/wallpaper.png";
 import Education from "./component/Education";
 import Footer from "./component/Footer";
-import Recommendations from "./component/Recommendation";
 import MobileNavbar from "./component/MobileNavbar";
+import NavBar from "./component/NavBar";
+import Projects from "./component/Projects";
+import Recommendations from "./component/Recommendation";
+import WorkExperience from "./component/WorkExperience";
+import Header from "./component/Header";
+import { Skills } from "./component/Skills";
 
 const useStyles = makeStyles()((theme) => ({
-  wrapGrid: {
-    width: 1200,
-    marginTop: 50,
-    [theme.breakpoints.down("lg")]: {
-      width: "85%",
-    },
-  },
   img: {
     width: "100%",
     height: "100%",
@@ -37,29 +32,15 @@ const useStyles = makeStyles()((theme) => ({
       display: "block",
     },
   },
-  curve: {
-    position: "absolute",
-    height: "250px",
-    width: "100%",
-    bottom: "0",
-    textAlign: "center",
-  },
-  curveBefore: {
-    content: '""',
-    display: "block",
-    position: "absolute",
-    borderRadius: "100% 50%",
-    width: "55%",
-    height: "100%",
-    transform: "translate(85%, 60%)",
-    backgroundColor: "hsl(216, 21%, 16%)",
-  },
-  test2: {
-    width: "100%",
-    background: "#8987a5",
-    color: "black",
-    borderRadius: `0 0 100%/97% 40px`,
-    aspectRatio: 960 / 30,
+  wrapGrid: {
+    width: 1300,
+    background: "white",
+    marginTop: 35,
+    marginBottom: 35,
+    padding: "1rem 5rem",
+    [theme.breakpoints.down("lg")]: {
+      width: "85%",
+    },
   },
 }));
 
@@ -86,24 +67,31 @@ export default function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Grid container direction="row" justifyContent="center" width="100%">
-        <div className={classes.mobileHeader}>
-          <MobileNavbar />
-        </div>
-        <div className={classes.test2}>
-          <Box className={classes.header}>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        width="100%"
+        sx={{ background: "linear-gradient(90deg, #F0EAD6 50%, #697E50 50%)" }}
+      >
+        <Grid item className={classes.wrapGrid}>
+          <div className={classes.mobileHeader}>
+            <MobileNavbar />
+          </div>
+          <div className={classes.header}>
             <NavBar
               toggleDarkMode={toggleDarkMode}
               toggleDarkTheme={toggleDarkTheme}
             />
-          </Box>
+          </div>
           <Header />
-        </div>
-        <WorkExperience />
-        <Projects />
-        <Education />
-        <Recommendations />
-        <Footer />
+          <Skills />
+          <WorkExperience />
+          <Projects />
+          <Education />
+          <Recommendations />
+          <Footer />
+        </Grid>
       </Grid>
     </ThemeProvider>
   );
