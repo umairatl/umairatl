@@ -28,7 +28,7 @@ const useStyles = makeStyles()((theme) => ({
   },
   wrapAppBar: {
     "& .MuiToolbar-root": {
-      background: "#ECDBC7",
+      background: "#F7EEED",
     },
     "& .MuiPaper-root": {
       left: 0,

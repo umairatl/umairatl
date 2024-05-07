@@ -77,7 +77,7 @@ export default function App() {
         direction="row"
         justifyContent="center"
         width="100%"
-        sx={{ background: "linear-gradient(90deg, #ECDBC7 50%, #697E50 50%)" }}
+        sx={{ background: "linear-gradient(90deg, #F7EEED 50%, #697E50 50%)" }}
       >
         <div className={classes.mobileHeader}>
           <MobileNavbar />
