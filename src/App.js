@@ -1,18 +1,17 @@
 import { Grid } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "tss-react/mui";
-import Pic from "./asset/wallpaper.png";
 import Education from "./component/Education";
 import Footer from "./component/Footer";
+import Header from "./component/Header";
 import MobileNavbar from "./component/MobileNavbar";
 import NavBar from "./component/NavBar";
 import Projects from "./component/Projects";
 import Recommendations from "./component/Recommendation";
-import WorkExperience from "./component/WorkExperience";
-import Header from "./component/Header";
 import { Skills } from "./component/Skills";
+import WorkExperience from "./component/WorkExperience";
 
 const useStyles = makeStyles()((theme) => ({
   img: {
@@ -39,22 +38,22 @@ const useStyles = makeStyles()((theme) => ({
     marginBottom: 35,
     padding: "1rem 5rem",
     [theme.breakpoints.down("lg")]: {
-      width: "85%",
+      padding: "1rem 3rem",
+      width: "95%",
+    },
+    [theme.breakpoints.down("md")]: {
+      margin: "10px 0px",
+      padding: "0px",
     },
   },
 }));
 
 export default function App() {
   const { classes } = useStyles();
-  const [toggleDarkMode, setToggleDarkMode] = useState(false);
 
-  const toggleDarkTheme = () => {
-    setToggleDarkMode(!toggleDarkMode);
-  };
-
-  const darkTheme = createTheme({
+  const theme = createTheme({
     palette: {
-      mode: toggleDarkMode ? "dark" : "light",
+      mode: "light",
       primary: {
         main: "#90caf9",
       },
@@ -65,24 +64,21 @@ export default function App() {
   });
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Grid
         container
         direction="row"
         justifyContent="center"
         width="100%"
-        sx={{ background: "linear-gradient(90deg, #F0EAD6 50%, #697E50 50%)" }}
+        sx={{ background: "linear-gradient(90deg, #ECDBC7 50%, #697E50 50%)" }}
       >
+        <div className={classes.mobileHeader}>
+          <MobileNavbar />
+        </div>
         <Grid item className={classes.wrapGrid}>
-          <div className={classes.mobileHeader}>
-            <MobileNavbar />
-          </div>
           <div className={classes.header}>
-            <NavBar
-              toggleDarkMode={toggleDarkMode}
-              toggleDarkTheme={toggleDarkTheme}
-            />
+            <NavBar />
           </div>
           <Header />
           <Skills />

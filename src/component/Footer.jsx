@@ -1,31 +1,40 @@
-import { Grid, Typography, Stack } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { Grid, Typography, Stack, Link } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import { ContentSize } from "./shared/ContentSize";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import EmailIcon from "@mui/icons-material/Email";
 
 const useStyles = makeStyles()((theme) => ({
   wrapFooter: {
     margin: "10px 0",
+    flexDirection: "row",
     [theme.breakpoints.down("md")]: {
       textAlign: "center",
+      flexDirection: "column-reverse",
     },
   },
   img: {
     borderRadius: "50%",
   },
+  link: {
+    color: "black",
+    "&:hover": {
+      color: "#A10142",
+    },
+  },
 }));
 
 const Footer = () => {
   const { classes } = useStyles();
-  const theme = useTheme();
 
   return (
     <ContentSize>
       <Grid
         container
-        direction={{ md: "row", sm: "column" }}
         justifyContent="space-between"
         className={classes.wrapFooter}
+        rowGap={2}
       >
         <Grid item>
           <Typography>
@@ -33,10 +42,19 @@ const Footer = () => {
           </Typography>
         </Grid>
         <Grid item>
-          <Stack direction="row" columnGap={2}>
-            <Typography>LinkedIn </Typography>
-            <Typography>Github </Typography>
-            <Typography>LinkedIn </Typography>
+          <Stack direction="row" justifyContent="center" columnGap={2}>
+            <Link
+              href="https://www.linkedin.com/in/umairatul-asyiqin-1b43271a8/"
+              className={classes.link}
+            >
+              <LinkedInIcon />
+            </Link>
+            <Link href="https://github.com/umairatl" className={classes.link}>
+              <GitHubIcon />
+            </Link>
+            <Link href="mailto:umairatlwork@gmail.com" className={classes.link}>
+              <EmailIcon />
+            </Link>
           </Stack>
         </Grid>
       </Grid>

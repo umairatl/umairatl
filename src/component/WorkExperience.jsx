@@ -1,14 +1,17 @@
-import { Box, Card, Typography, Grid, Stack, Button } from "@mui/material";
+import { Box, Card, Grid, Stack, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { makeStyles } from "tss-react/mui";
-import MM from "../asset/mmLogo.png";
 import Deriv from "../asset/deriv.png";
 import Doctor2u from "../asset/doctor2u.jpg";
-import { useTheme } from "@mui/material/styles";
+import MM from "../asset/mmLogo.png";
 import { ContentSize } from "./shared/ContentSize";
 
 const useStyles = makeStyles()((theme) => ({
   wrapBox: {
     marginTop: 40,
+    [theme.breakpoints.down("md")]: {
+      marginTop: 0,
+    },
   },
   img: {
     borderRadius: "50%",
@@ -58,7 +61,7 @@ const WorkExperience = () => {
   ];
 
   return (
-    <ContentSize>
+    <ContentSize id="Experience">
       <Box className={classes.wrapBox}>
         <Card sx={{ padding: 5, borderRadius: 5 }}>
           <Typography varaint="h5" textAlign="start" fontWeight="bold">
@@ -73,6 +76,7 @@ const WorkExperience = () => {
             >
               <Stack direction="row" alignItems="center" columnGap={2}>
                 <img
+                  alt="company logo"
                   src={res.img}
                   width={40}
                   height={40}

@@ -7,23 +7,33 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { makeStyles } from "tss-react/mui";
+import { NAVBAR_OPTONS } from "../constant/navbar";
+import CloseIcon from "@mui/icons-material/Close";
+import { downloadPDF } from "../helper/downloadPdf";
 
 const useStyles = makeStyles()((theme) => ({
   cardMenu: {
-    height: "300px",
     "& .MuiPaper-root": {
       width: "100% !important",
+      left: "0px !important",
+      maxWidth: "100%",
     },
   },
   blurBackground: {
     backdropFilter: "blur(8px)",
     backgroundColor: "rgba(255, 255, 255, 0.6)",
     position: "fixed",
-    top: 0,
-    left: 0,
     width: "100%",
     height: "100%",
-    zIndex: 100,
+  },
+  wrapAppBar: {
+    "& .MuiToolbar-root": {
+      background: "#ECDBC7",
+    },
+    "& .MuiPaper-root": {
+      left: 0,
+      width: "100% !important",
+    },
   },
 }));
 
@@ -34,18 +44,34 @@ export default function MobileNavbar() {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    setIsMenuOpen(true); // Open the menu
+    setIsMenuOpen(true);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-    setIsMenuOpen(false); // Close the menu
+    setIsMenuOpen(false);
+  };
+
+  const onClickLink = (link) => {
+    if (link === "CV") {
+      downloadPDF();
+    } else {
+      const element = document.querySelector(link);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "center",
+        });
+      }
+    }
+    handleClose();
   };
 
   return (
     <>
-      <Box sx={{ flexGrow: 1, zIndex: 999 }}>
-        <AppBar position="static">
+      <Box>
+        <AppBar position="static" className={classes.wrapAppBar}>
           <Toolbar>
             <IconButton
               size="large"
@@ -55,7 +81,7 @@ export default function MobileNavbar() {
               sx={{ mr: 2 }}
               onClick={handleClick}
             >
-              <MenuIcon />
+              {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -66,15 +92,21 @@ export default function MobileNavbar() {
             vertical: "bottom",
             horizontal: "left",
           }}
-          sx={{ top: "5px !important", width: "100%" }}
+          sx={{ top: "5px !important" }}
           keepMounted
           open={Boolean(anchorEl)}
-          onClose={handleClose} // Close the menu on outside click
+          onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
-          <MenuItem onClick={handleClose}>Work Experience</MenuItem>
-          <MenuItem onClick={handleClose}>Projects & Hackhaton</MenuItem>
-          <MenuItem onClick={handleClose}>Education</MenuItem>
+          {NAVBAR_OPTONS.map((res, index) => (
+            <MenuItem
+              key={index}
+              onClick={() => {
+                onClickLink(res.link);
+              }}
+            >
+              {res.title}
+            </MenuItem>
+          ))}
         </Menu>
       </Box>
       {isMenuOpen && (

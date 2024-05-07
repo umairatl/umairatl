@@ -45,8 +45,8 @@ export const PROJECTS_LIST = [
     img: KingKongFood,
     website: "KingKongFood Web App (FYP)",
     subtitle:
-      "Led both mobile and front-end development for a user-friendly recipe app, seamlessly integrated with Yummly Rapid API for enhanced recipe exploration.",
-    linkType: "Live app",
+      "A comprehensive food ordering platform. It supports product browsing, order tracking, and specialized catering booking. I achieved a score of 70/100 for this project",
+    linkType: "Test result",
     repo: "https://drive.google.com/file/d/1Rxe2N-oE_xOPViz8wvLT6Zi776BxS7rn/view?usp=sharing",
     period: "2021",
   },

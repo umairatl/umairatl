@@ -9,16 +9,16 @@ import clement from "../asset/clement.png";
 
 export const feedback = [
   {
-    img: junyan,
-    name: "Tan Jun Yan",
-    position: "Software Engineer",
-    feedback: `She is one of a kind. Working alongside Begum, I've witnessed her exceptional talent in creating pixel-perfect UI designs. Her incredible attention to detail and commitment to quality shine through in every project she undertakes. Begum has a rare ability to transform complex concepts into visually stunning and user-friendly interfaces. Her dedication to crafting UIs that not only meet but exceed expectations is truly impressive. I have no doubt that Begum will continue to raise the bar with her exceptional skills and dedication in this field!`,
-  },
-  {
     img: dharsh,
     name: "Dharisini Kanesamoorthy",
     position: "UX Architect",
     feedback: `Umairatul worked with me on project when we were trainees. She is one of the sweetest people I know, and this translates into her work as well. She is always willing to go above and beyond to help her colleagues, and takes the time to listen and understand their needs. Her willingness to constantly study and improve herself is evident in her work, as she is always looking for ways to enhance her skills and knowledge. She is always resourceful!! One thing that always stood out to me about umairatul was her ability to network with seniors and learn from their experiences. I remember a time when we were working on a react js website, and there was a minor issue that we were struggling to solve. She took the initiative to talk to some senior developers in our company, and through these conversations she was able to learn some new concepts and apply them to the project. This was a great example of her proactive attitude and willingness to learn and improve.`,
+  },
+  {
+    img: junyan,
+    name: "Tan Jun Yan",
+    position: "Software Engineer",
+    feedback: `She is one of a kind. Working alongside Begum, I've witnessed her exceptional talent in creating pixel-perfect UI designs. Her incredible attention to detail and commitment to quality shine through in every project she undertakes. Begum has a rare ability to transform complex concepts into visually stunning and user-friendly interfaces. Her dedication to crafting UIs that not only meet but exceed expectations is truly impressive. I have no doubt that Begum will continue to raise the bar with her exceptional skills and dedication in this field!`,
   },
   {
     img: siyu,

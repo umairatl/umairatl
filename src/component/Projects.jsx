@@ -13,6 +13,7 @@ const useStyles = makeStyles()((theme) => ({
     width: "100%",
     [theme.breakpoints.down("md")]: {
       width: "100%",
+      marginTop: 20,
     },
   },
   img: {
@@ -21,11 +22,15 @@ const useStyles = makeStyles()((theme) => ({
     filter: "brightness(0.7)",
     [theme.breakpoints.down("md")]: {
       width: "100%",
+      height: "150px",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
       height: "100%",
     },
   },
   wrapGridItem: {
-    minHeight: 400,
+    marginBottom: "1rem",
     "&:hover .MuiCard-root": {
       backgroundColor: "#f0f0f0",
     },
@@ -45,16 +50,21 @@ const Projects = () => {
 
   return (
     <Box className={classes.wrapBox}>
-      <ContentSize>
-        <Typography variant="h5" textAlign="center" padding={5}>
+      <ContentSize id="Projects">
+        <Typography
+          variant="h6"
+          fontWeight="bold"
+          textAlign={theme.breakpoints.down("md") ? "left" : "center"}
+          marginBottom={3}
+        >
           Projects & Hackathons
         </Typography>
         <Grid container rowGap={5} columnGap={5}>
           {PROJECTS_LIST.map((res, index) => (
             <Grid
               item
-              xs={12}
-              sm={5.5}
+              sm={12}
+              md={5.6}
               lg={3.7}
               key={index}
               className={classes.wrapGridItem}
@@ -66,7 +76,11 @@ const Projects = () => {
                     boxShadow: "0px 15px 18px rgba(0, 0, 0, 0.1)",
                   }}
                 >
-                  <img src={res?.img} className={classes.img} />
+                  <img
+                    src={res?.img}
+                    className={classes.img}
+                    alt="project img"
+                  />
                   <Stack direction="column" padding={2} height="200px">
                     <Typography variant="subtitle2" fontWeight="bold">
                       {res.website} | {res.period}
@@ -83,7 +97,6 @@ const Projects = () => {
                           d="m7.775 3.275l1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0a.75.75 0 0 1 .018-1.042a.75.75 0 0 1 1.042-.018a2 2 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.75.75 0 0 1-1.042-.018a.75.75 0 0 1-.018-1.042m-4.69 9.64a2 2 0 0 0 2.83 0l1.25-1.25a.75.75 0 0 1 1.042.018a.75.75 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0a.75.75 0 0 1-.018 1.042a.75.75 0 0 1-1.042.018a2 2 0 0 0-2.83 0l-2.5 2.5a2 2 0 0 0 0 2.83"
                         />
                       </svg>
-
                       <Typography variant="inherit" fontSize="0.9rem">
                         {res.linkType}
                       </Typography>

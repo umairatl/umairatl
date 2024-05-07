@@ -8,16 +8,25 @@ const useStyles = makeStyles()((theme) => ({
     background: "white",
     marginTop: 40,
     [theme.breakpoints.down("lg")]: {
+      width: "90%",
+    },
+    [theme.breakpoints.down("md")]: {
       width: "85%",
     },
   },
 }));
 
-export const ContentSize = ({ children }) => {
+export const ContentSize = ({ children, id }) => {
   const { classes } = useStyles();
 
   return (
-    <Grid container width="100%" justifyContent="center" alignItems="center">
+    <Grid
+      id={id}
+      container
+      width="100%"
+      justifyContent="center"
+      alignItems="center"
+    >
       <Grid item className={classes.wrapGrid}>
         {children}
       </Grid>
