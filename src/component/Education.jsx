@@ -28,7 +28,7 @@ const Education = () => {
       img: LJMU,
       school: "Liverpool John Moores University, (3+0)",
       major: "e-Business Technology & Management",
-      award: "Bachelor of Science with Honors Class 1 (76%)",
+      award: "Bachelor of Science with Honors Class 1 (73%)",
       period: "2018-2021",
     },
   ];

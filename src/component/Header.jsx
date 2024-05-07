@@ -89,9 +89,9 @@ const Header = () => {
               data-aos-easing="ease-in-out"
               data-aos-duration={300}
             >
-              Proficient in HTML, CSS, JavaScript, TypeScript, ReactJs, Next.js
-              and Angular. Dedicated to pushing boundaries and fostering
-              collaboration within dynamic teams to achieve excellence.
+              Proficient in HTML, CSS, JavaScript, TypeScript, ReactJs, Next.js.
+              Dedicated to pushing boundaries and fostering collaboration within
+              dynamic teams to achieve excellence.
             </Typography>
             <Stack className={classes.stackBtn} columnGap={1} rowGap={2}>
               <Button

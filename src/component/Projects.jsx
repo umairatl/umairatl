@@ -2,7 +2,6 @@ import { Box, Card, Grid, Link, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { makeStyles } from "tss-react/mui";
-
 import { ContentSize } from "./shared/ContentSize";
 import { PROJECTS_LIST } from "../constant/projects";
 

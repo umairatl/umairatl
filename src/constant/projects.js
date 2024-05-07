@@ -3,6 +3,7 @@ import CryptownImg1 from "../asset/img/cryptownImg1.png";
 import KingKongFood from "../asset/img/kingkongfood.png";
 import Yummly from "../asset/img/mobDev.png";
 import MoneyMatch from "../asset/img/moneymatchco.png";
+import LandingPage from "../asset/img/portfolio.png";
 
 export const PROJECTS_LIST = [
   {
@@ -27,7 +28,7 @@ export const PROJECTS_LIST = [
     img: Amiibo,
     website: "Amiibo Series Web Application",
     subtitle:
-      "Led the creation of an informative website showcasing amiibo characters, integrating user-friendly search capabilities",
+      "Group project, an informative website showcasing amiibo characters, integrating user-friendly search capabilities",
     linkType: "Live app",
     repo: "https://team3b-fe-hackathon1-1ihi05joa-akmal21hakim.vercel.app/",
     period: "2022",
@@ -49,5 +50,13 @@ export const PROJECTS_LIST = [
     linkType: "Test result",
     repo: "https://drive.google.com/file/d/1Rxe2N-oE_xOPViz8wvLT6Zi776BxS7rn/view?usp=sharing",
     period: "2021",
+  },
+  {
+    img: LandingPage,
+    website: "Landing Page",
+    subtitle: "Responsive ReactJs app for interview purpose",
+    linkType: "Github repository",
+    repo: "https://github.com/umairatl/umairatl",
+    period: "2024",
   },
 ];
