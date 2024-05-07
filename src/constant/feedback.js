@@ -1,11 +1,11 @@
-import tow from "../asset/tow.png";
-import junyan from "../asset/junyan.png";
-import dharsh from "../asset/dharsh.png";
-import siyu from "../asset/siyu.png";
-import nic from "../asset/nic.png";
-import derrick from "../asset/derrick.png";
-import mino from "../asset/mino.png";
-import clement from "../asset/clement.png";
+import tow from "../asset/img/tow.png";
+import junyan from "../asset/img/junyan.png";
+import dharsh from "../asset/img/dharsh.png";
+import siyu from "../asset/img/siyu.png";
+import nic from "../asset/img/nic.png";
+import derrick from "../asset/img/derrick.png";
+import mino from "../asset/img/mino.png";
+import clement from "../asset/img/clement.png";
 
 export const feedback = [
   {

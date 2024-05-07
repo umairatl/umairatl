@@ -1,9 +1,9 @@
 import { Box, Card, Grid, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { makeStyles } from "tss-react/mui";
-import Deriv from "../asset/deriv.png";
-import Doctor2u from "../asset/doctor2u.jpg";
-import MM from "../asset/mmLogo.png";
+import Deriv from "../asset/img/deriv.png";
+import Doctor2u from "../asset/img/doctor2u.jpg";
+import MM from "../asset/img/mmLogo.png";
 import { ContentSize } from "./shared/ContentSize";
 
 const useStyles = makeStyles()((theme) => ({
@@ -22,12 +22,6 @@ const useStyles = makeStyles()((theme) => ({
     "&:hover": { background: "#697E50" },
     width: "20%",
     padding: "0.5rem 0",
-    // background: "#423944",
-    // color: "white",
-    // borderRadius: "1rem",
-    // [theme.breakpoints.down("md")]: {
-    //   width: "100%",
-    // },
   },
   period: {
     [theme.breakpoints.down("md")]: {
@@ -73,6 +67,9 @@ const WorkExperience = () => {
               justifyContent="space-between"
               key={index}
               margin="10px 0px"
+              data-aos="fade-up"
+              data-aos-duration={200 + index * 100}
+              data-aos-easing="ease-in-out"
             >
               <Stack direction="row" alignItems="center" columnGap={2}>
                 <img

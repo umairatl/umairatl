@@ -1,8 +1,8 @@
-import Amiibo from "../asset/amiibo.png";
-import CryptownImg1 from "../asset/cryptownImg1.png";
-import KingKongFood from "../asset/kingkongfood.png";
-import Yummly from "../asset/mobDev.png";
-import MoneyMatch from "../asset/moneymatchco.png";
+import Amiibo from "../asset/img/amiibo.png";
+import CryptownImg1 from "../asset/img/cryptownImg1.png";
+import KingKongFood from "../asset/img/kingkongfood.png";
+import Yummly from "../asset/img/mobDev.png";
+import MoneyMatch from "../asset/img/moneymatchco.png";
 
 export const PROJECTS_LIST = [
   {

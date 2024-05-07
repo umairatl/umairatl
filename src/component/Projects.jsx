@@ -71,6 +71,9 @@ const Projects = () => {
             >
               <Link href={res.repo} target="_blank" className={classes.link}>
                 <Card
+                  data-aos="fade-up"
+                  data-aos-duration={200 + index * 100}
+                  data-aos-easing="ease-in-out"
                   sx={{
                     borderRadius: "0.5rem",
                     boxShadow: "0px 15px 18px rgba(0, 0, 0, 0.1)",

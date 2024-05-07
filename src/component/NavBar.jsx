@@ -1,6 +1,6 @@
 import { Grid, Link, Stack, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import img from "../asset/header.png";
+import img from "../asset/img/header.png";
 import { NAVBAR_OPTONS } from "../constant/navbar";
 import { downloadPDF } from "../helper/downloadPdf";
 import { ContentSize } from "./shared/ContentSize";

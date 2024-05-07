@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "tss-react/mui";
 import Education from "./component/Education";
 import Footer from "./component/Footer";
@@ -12,6 +12,8 @@ import Projects from "./component/Projects";
 import Recommendations from "./component/Recommendation";
 import { Skills } from "./component/Skills";
 import WorkExperience from "./component/WorkExperience";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const useStyles = makeStyles()((theme) => ({
   img: {
@@ -50,6 +52,10 @@ const useStyles = makeStyles()((theme) => ({
 
 export default function App() {
   const { classes } = useStyles();
+
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
 
   const theme = createTheme({
     palette: {

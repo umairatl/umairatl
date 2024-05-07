@@ -1,6 +1,6 @@
-import { Box, Card, Typography, Grid, Stack } from "@mui/material";
+import { Card, Typography, Grid, Stack } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import LJMU from "../asset/ljmu.png";
+import LJMU from "../asset/img/ljmu.png";
 import { useTheme } from "@mui/material/styles";
 import { ContentSize } from "./shared/ContentSize";
 
@@ -52,6 +52,7 @@ const Education = () => {
               columnGap={2}
             >
               <img
+                alt="logo"
                 src={res.img}
                 width={40}
                 height={40}

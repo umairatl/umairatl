@@ -4,8 +4,8 @@ import { Box, Grid, Stack, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import { Carousel } from "react-responsive-carousel";
 import { makeStyles } from "tss-react/mui";
-import QL from "../asset/quoteLeft.png";
-import QR from "../asset/quoteRight.png";
+import QL from "../asset/img/quoteLeft.png";
+import QR from "../asset/img/quoteRight.png";
 import { feedback } from "../constant/feedback";
 import { ContentSize } from "./shared/ContentSize";
 

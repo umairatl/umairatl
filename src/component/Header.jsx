@@ -1,7 +1,7 @@
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import * as React from "react";
 import { makeStyles } from "tss-react/mui";
-import Img from "../asset/profilePic.png";
+import Img from "../asset/img/profilePic.png";
 import { ContentSize } from "./shared/ContentSize";
 import { downloadPDF } from "../helper/downloadPdf";
 
@@ -73,17 +73,31 @@ const Header = () => {
               ,
               <br /> I'm Umaira, <br /> Front-end Developer
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography
+              variant="subtitle1"
+              data-aos="fade-up"
+              data-aos-easing="ease-in-out"
+              data-aos-duration={100}
+            >
               Transforming design concepts into stunning and functional web
               experiences is my specialty.
             </Typography>
-            <Typography variant="subtitle2" color="#595959">
+            <Typography
+              variant="subtitle2"
+              color="#595959"
+              data-aos="fade-up"
+              data-aos-easing="ease-in-out"
+              data-aos-duration={300}
+            >
               Proficient in HTML, CSS, JavaScript, TypeScript, ReactJs, Next.js
               and Angular. Dedicated to pushing boundaries and fostering
               collaboration within dynamic teams to achieve excellence.
             </Typography>
             <Stack className={classes.stackBtn} columnGap={1} rowGap={2}>
               <Button
+                data-aos="fade-up"
+                data-aos-duration={500}
+                data-aos-easing="ease-in-out"
                 onClick={downloadPDF}
                 variant="outlined"
                 className={classes.btn}
@@ -100,6 +114,9 @@ const Header = () => {
                 Hire me
               </Button>
               <Button
+                data-aos="fade-up"
+                data-aos-duration={500}
+                data-aos-easing="ease-in-out"
                 href="#Projects"
                 variant="contained"
                 className={classes.btn}
