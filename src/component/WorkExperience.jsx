@@ -48,7 +48,7 @@ const WorkExperience = () => {
     },
     {
       img: Doctor2u,
-      company: "BP Healthcare",
+      company: "Doctor2u",
       title: "IT Programmer",
       period: "September 2021 – June 2022",
     },
